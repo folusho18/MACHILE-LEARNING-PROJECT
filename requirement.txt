@@ -1,6 +1,5 @@
-This has all my python packages
-Thisis what you need to install
-Streamlit
-Joblib
+streamlit
 numpy
+joblib
+scikit-learn
 pandas
