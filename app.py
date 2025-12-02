@@ -92,16 +92,27 @@ st.subheader("Input Feature Values")
 col1, col2 = st.columns(2)
 
 with col1:
-    MedInc = st.slider("Median Income (MedInc)   1 -> $10,000", 0.0, 150.0, 3.5, help="Median income in block group (in tens of thousands of USD)")
-    HouseAge = st.slider("House Age", 1, 1000, 20, help="Median house age in block group years")
-    AveRooms = st.slider("Average Rooms", 0.0, 100.0, 5.0, help="Average number of rooms per household")
-    AveBedrms = st.slider("Average Bedrooms", 0.0, 100.0, 1.0, help="Average number of bedrooms per household")
-    
+    MedInc = st.number_input("Median Income (MedInc)   1 -> $10,000",
+    min_value=0.0, max_value=150.0, value=3.5,help="Median income in block group (in tens of thousands of USD)")
+
+    HouseAge = st.number_input("House Age",  min_value=1,step=1, max_value=1000, value=20, help="Median house age in block group years")
+
+    AveRooms = st.number_input("Average Rooms", min_value=1.0, max_value=100.0, value=5.0, help="Average number of rooms per household")
+
+    AveBedrms = st.number_input("Average Bedrooms",  min_value=1.0, max_value=100.0, value=1.0,   
+    help="Average number of bedrooms per household")
+
 with col2:
-    Population = st.slider("Population", 1, 50000, 1000, help="Block group population")
-    AveOccup = st.slider("Average Occupancy", 0.0, 100.0, 3.0, help="Average number of occupants per household")
-    Latitude = st.slider("Latitude", 32.0, 42.0, 34.0, help="Block group latitude")
-    Longitude = st.slider("Longitude", -125.0, -114.0, -118.0, help="Block group longitude")
+    Population = st.number_input("Population",min_value=1,step=1, max_value=50000, value=1000, help="Block group population")
+
+    AveOccup = st.number_input("Average Occupancy", min_value=0.0, max_value=100.0, value=3.0, help="Average occupants per household")
+
+    Latitude = st.number_input("Latitude", min_value=32.0, max_value=42.0, value=34.0, help="Latitude of block group")
+
+    Longitude = st.number_input("Longitude", min_value=-125.0, max_value=-114.0, value=-118.0, help="Longitude of block group")
+
+
+
 
 
 
